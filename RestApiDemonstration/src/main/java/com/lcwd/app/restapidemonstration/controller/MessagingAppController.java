@@ -24,4 +24,9 @@ public class MessagingAppController {
     public String hello(@RequestBody UserDTO user) {
         return "Hello " + user.getFirstName() + " " + user.getLastName() + " from BridgeLabz!";
     }
+
+    @PutMapping("/hello/put/{firstName}")
+    public String helloPut(@PathVariable String firstName, @RequestParam(name = "lastName") String lastName) {
+        return "Hello " + firstName + " " + lastName + " from BridgeLabz!";
+    }
 }
